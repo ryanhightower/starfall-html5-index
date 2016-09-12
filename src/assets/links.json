@@ -1,0 +1,121 @@
+{
+  "ABCs": {
+    "flash": "http://www.starfall.com/n/level-k/index/load.htm",
+    "html5": "http://dev.starfall.com/h/d1/templates/abcs/index.php"
+  },
+  "LearnToRead": {
+    "flash": "http://www.starfall.com/n/level-a/learn-to-read/load.htm",
+    "html5": "http://dev.starfall.com/h/d2/zac_the_rat/index.php"
+  },
+  "FunToRead": {
+    "flash": "http://www.starfall.com/n/level-b/index/load.htm",
+    "html5": "http://dev.starfall.com/h/sub-index/templates/FTR/index.php"
+  },
+  "ImReading": {
+    "flash": "http://www.starfall.com/n/level-c/index/load.htm"
+  },
+  "calendar":{
+    "flash": "http://more2.starfall.com/m/math/calendar/load.htm?f&amp;ref=main"
+  },
+  "gingerbread":{
+    "flash": "http://www.starfall.com/n/holiday/gingerbread/load.htm?f&amp;ref=main"
+  },
+  "grandparents":{
+    "flash": "http://www.starfall.com/n/holiday/gingerbread/load.htm?f&amp;ref=main"
+  },
+  "pumpkinPatch":{
+    "flash": "http://www.starfall.com/n/holiday/gingerbread/load.htm?f&amp;ref=main",
+    "html5": "http://dev.starfall.com/h/d2/pumpkin/index.php"
+  },
+  "turkey":{
+    "flash": "http://www.starfall.com/n/holiday/turkey/load.htm?f&amp;n=main"
+  },
+  "snowman":{
+    "flash": "http://www.starfall.com/n/holiday/snowman/load.htm?f&amp;n=main",
+    "html5": "http://dev.starfall.com/h/d2/snowman/index.php"
+  },
+  "hundredthDay":{
+    "flash": "http://www.starfall.com/n/holiday/hundredthday/load.htm?f&amp;n=main"
+  },
+  "groundhog":{
+    "flash": "http://www.starfall.com/n/holiday/groundhogsday/load.htm?f&amp;n=main"
+  },
+  "clover":{
+    "flash": "http://www.starfall.com/n/holiday/clover/load.htm?f&amp;n=main"
+  },
+  "gardenshop":{
+    "flash": "http://www.starfall.com/n/holiday/gardenshop/load.htm?f&amp;n=main"
+  },
+  "valentine":{
+    "flash": "http://more2.starfall.com/m/holiday/valentine-card/load.htm?f&amp;ref=main"
+  },
+  "spring":{
+    "flash": "http://www.starfall.com/n/holiday/spring/load.htm?f&amp;n=main"
+  },
+  "earthDay":{
+    "flash": "http://www.starfall.com/n/holiday/earthday/load.htm?f&amp;n=main"
+  },
+  "firstGrade":{
+    "flash": "http://more2.starfall.com/m/welcome/first-demo/load.htm?www=first_grade"
+  },
+  "coinMonkey":{
+    "flash": "http://more.starfall.com/m/math/coin-monkey/load.htm?f&amp;d=demo&amp;www=coinmonkeyschool"
+  },
+  "mathJourney":{
+    "flash": "http://more2.starfall.com/m/math/math-journey/load.htm?d=demo&amp;www=mjschool"
+  },
+  "mathSongs":{
+    "flash": "http://more2.starfall.com/m/math-k/song-index-demo/load.htm",
+    "html5": "http://dev.starfall.com/h/d2/12345fish/index.php"
+  },
+  "mathNumbers":{
+    "flash": "http://more2.starfall.com/m/math-k/numbers-demo/load.htm",
+    "html5": "http://dev.starfall.com/h/d1/templates/numbers/index.php"
+  },
+  "mathGeometry":{
+    "flash": "http://more2.starfall.com/m/math/geometry-demo/load.htm",
+    "html5": "http://dev.starfall.com/h/sub-index/templates/geometry/index.php"
+  },
+  "mathAddSubtract":{
+    "flash": "http://more2.starfall.com/m/math/add-subtract-demo/load.htm",
+    "html5": "http://dev.starfall.com/h/sub-index/templates/add-subtract/index.php"
+  },
+  "mathMultiplyDivide":{
+    "flash": "http://more2.starfall.com/m/math2/multiply-divide-demo/load.htm",
+    "html5": "http://dev.starfall.com/h/sub-index/templates/multiply-divide/index.php"
+  },
+  "mathSecondGrade":{
+    "flash": "http://more2.starfall.com/m/math2/selected-2nd-demo/load.htm",
+    "html5": "http://dev.starfall.com/h/sub-index/templates/selected-2nd/index.php"
+  },
+  "abcRhymes":{
+    "flash": "http://more2.starfall.com/m/abc-rhymes/rhymes-index-demo/load.htm"
+  },
+  "colors":{
+    "flash": "http://more2.starfall.com/m/level-k/colors-demo/load.htm",
+    "html5": "http://dev.starfall.com/h/d2/red/index.php"
+  },
+  "predecodeable":{
+    "flash": "http://more2.starfall.com/m/level-k/predecodable-demo/load.htm"
+  },
+  "wordMachines":{
+    "flash": "http://more2.starfall.com/m/level-k/word-machines-demo/load.htm?n=machine&amp;y=1"
+  },
+  "phonics":{
+    "flash": "http://more2.starfall.com/m/more-phonics/index-demo/load.htm"
+  },
+  "library":{
+    "flash": "http://more2.starfall.com/m/talking-library/library-index-demo/load.htm"
+  },
+  "bodyMotion":{
+    "flash": "http://more2.starfall.com/m/level-k/body-motion-demo/load.htm",
+    "html5": "http://dev.starfall.com/h/d3/teddybear/index.php"
+  },
+  "nurseryRhymes":{
+    "flash": "http://more2.starfall.com/m/player/selected-nursery-rhymes-demo/load.htm",
+    "html5": "http://dev.starfall.com/h/d2/rhyme-player/index.php"
+  },
+  "folkSongs":{
+    "flash": "http://more2.starfall.com/m/level-k/folk-songs-demo/load.htm"
+  }
+}
