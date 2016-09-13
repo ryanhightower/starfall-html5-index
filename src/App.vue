@@ -1,14 +1,5 @@
 <template>
 
-  <div class="ribbon-container">
-
-      <h1 class="ribbon">
-
-          Kindergarten Mathematics curriculum is here! <a href="http://more.starfall.com/info/curriculum/k-math.php">Learn More</a>
-
-      </h1>
-
-  </div>
 
   <div class="logo">
 
@@ -44,7 +35,18 @@
 
           <li><a href="http://more.starfall.com/info/ways-to-join.php?ref=NI_MenuBar">How to Join</a></li>
 
-      </ul>
+        </ul>
+
+        <div class="ribbon-container">
+
+            <h1 class="ribbon">
+
+                Kindergarten Mathematics curriculum is here! <a href="http://more.starfall.com/info/curriculum/k-math.php">Learn More</a>
+
+            </h1>
+
+        </div>
+      </div>
 
   </div>
 
