@@ -8,32 +8,34 @@
   </div>
 
   <div class="header">
+    <button class="mobile-nav-toggle btn btn-info" @click.prevent="show.mobileNav = !show.mobileNav">Menu</button>
+    <div class="nav-wrap">
 
-      <ul class="nav">
+        <ul class="nav">
 
-          <li><a href="http://more.starfall.com/info/parents.php">Parents</a></li>
+            <li><a href="http://more.starfall.com/info/parents.php">Parents</a></li>
 
-          <li> &nbsp; • &nbsp; </li>
+            <li class="bullet"> &nbsp; • &nbsp; </li>
 
-          <li><a href="http://more.starfall.com/info/educators.php">Educators</a></li>
+            <li><a href="http://more.starfall.com/info/educators.php">Educators</a></li>
 
-          <li> &nbsp; • &nbsp; </li>
+            <li class="bullet"> &nbsp; • &nbsp; </li>
 
-          <li><a href="http://more.starfall.com/info/homeschool.php">Homeschool</a></li>
+            <li><a href="http://more.starfall.com/info/homeschool.php">Homeschool</a></li>
 
-          <li> &nbsp; • &nbsp; </li>
+            <li class="bullet"> &nbsp; • &nbsp; </li>
 
-          <li><a href="https://store.starfall.com/">Store</a></li>
+            <li><a href="https://store.starfall.com/">Store</a></li>
 
-      </ul>
+        </ul>
 
-      <ul class="navr">
+        <ul class="navr">
 
-          <li><a href="https://more.starfall.com/memb/login1.php">Login/Authorize</a></li>
+            <li><a href="https://more.starfall.com/memb/login1.php">Login/Authorize</a></li>
 
-          <li> &nbsp; • &nbsp; </li>
+            <li class="bullet"> &nbsp; • &nbsp; </li>
 
-          <li><a href="http://more.starfall.com/info/ways-to-join.php?ref=NI_MenuBar">How to Join</a></li>
+            <li><a href="http://more.starfall.com/info/ways-to-join.php?ref=NI_MenuBar">How to Join</a></li>
 
         </ul>
 
@@ -68,79 +70,117 @@
 
           <div class="row">
               <a :class="{ 'disabled':!hasFlash && !links.ABCs.html5 }" :href="getHref(links.ABCs)">
-                  <div class="classic ABC"><div class="number">1</div>
-                      <img src="assets/images/app-ABCs-114.png" alt="ABCs"><p>ABCs</p></div></a>
+                  <div class="classic table ABC"><div class="number table-cell">1</div>
+                      <div class="table-cell img-well">
+                        <img src="assets/images/app-ABCs-114.png" alt="ABCs">
+                      </div><p class="table-cell">ABCs</p></div></a>
           </div>
 
           <div class="row">
               <a :class="{ 'disabled':!hasFlash && !links.LearnToRead.html5 }" :href="getHref(links.LearnToRead)">
-                  <div class="classic LTR"><div class="number">2</div>
-                      <img src="assets/images/app-LTR-114.png" alt="Learn to Read"><p>Learn to Read</p></div></a>
+                  <div class="classic table LTR"><div class="number table-cell">2</div>
+                      <div class="table-cell img-well">
+                        <img src="assets/images/app-LTR-114.png" alt="Learn to Read">
+                      </div><p class="table-cell">Learn to Read</p></div></a>
 
           </div>
 
           <div class="row">
               <a :class="{ 'disabled':!hasFlash && !links.FunToRead.html5 }" :href="getHref(links.FunToRead)">
-                  <div class="classic FTR"><div class="number">3</div>
-                      <img src="assets/images/app-FunToRead-114.png" alt="Fun to Read"><p>It's Fun to Read</p></div></a>
+                  <div class="classic table FTR"><div class="number table-cell">3</div>
+                      <div class="table-cell img-well">
+                        <img src="assets/images/app-FunToRead-114.png" alt="Fun to Read">
+                      </div><p class="table-cell">It's Fun to Read</p></div></a>
           </div>
 
           <div class="row">
               <a :class="{ 'disabled':!hasFlash && !links.ImReading.html5 }" :href="getHref(links.ImReading)">
-                  <div class="classic IR"><div class="number">4</div>
-                      <img src="assets/images/app-ImReading-114.png" alt="I&#39;m Reading"><p>I'm Reading</p></div></a>
+                  <div class="classic table IR"><div class="number table-cell">4</div>
+                      <div class="table-cell img-well">
+                        <img src="assets/images/app-ImReading-114.png" alt="I&#39;m Reading">
+                      </div><p class="table-cell">I'm Reading</p></div></a>
           </div>
 
           <div class="row holidayicon">
 
-              <img src="assets/images/s.gif" style="width:40px; height:59px; float:left;" alt="">
+              <div class="col-1-10">
+                <img src="assets/images/s.gif" style="width:40px; height:59px; float:left;" alt="">
+              </div>
 
-              <div :class="{ 'disabled':!hasFlash && !links.calendar.html5 }"><a :href="getHref(links.calendar)">
-                  <img src="assets/images/h-calendar.gif" alt="Let&#39;s Make a Calendar"></a></div>
+              <div class="col-1-5">
+                <span :class="{ 'disabled':!hasFlash && !links.calendar.html5 }"><a :href="getHref(links.calendar)">
+                    <img src="assets/images/h-calendar.gif" alt="Let&#39;s Make a Calendar"></a></span>
+              </div>
 
-              <div :class="{ 'disabled':!hasFlash && !links.gingerbread.html5 }"><a  :href="getHref(links.gingerbread)">
-                  <img src="assets/images/h-gingerbread.gif" alt="Make a Gingerbread Boy or Girl"></a></div>
+              <div class="col-1-5">
+                <span :class="{ 'disabled':!hasFlash && !links.gingerbread.html5 }"><a  :href="getHref(links.gingerbread)">
+                    <img src="assets/images/h-gingerbread.gif" alt="Make a Gingerbread Boy or Girl"></a></span>
+              </div>
 
-              <div :class="{ 'disabled':!hasFlash && !links.snowman.html5 }"><a  :href="getHref(links.snowman)">
-                  <img src="assets/images/h-snowman.gif" alt="Make a Snowman"></a></div>
+              <div class="col-1-5">
+                <span :class="{ 'disabled':!hasFlash && !links.snowman.html5 }"><a  :href="getHref(links.snowman)">
+                    <img src="assets/images/h-snowman.gif" alt="Make a Snowman"></a></span>
+              </div>
 
-              <div :class="{ 'disabled':!hasFlash && !links.pumpkinPatch.html5 }"><a  :href="getHref(links.pumpkinPatch)">
-                  <img src="assets/images/h-pumpkin.gif" alt="Pumpkin Patch"></a></div>
+              <div class="col-1-5">
+                <span :class="{ 'disabled':!hasFlash && !links.pumpkinPatch.html5 }"><a  :href="getHref(links.pumpkinPatch)">
+                    <img src="assets/images/h-pumpkin.gif" alt="Pumpkin Patch"></a></span>
+              </div>
           </div>
 
           <div class="row holidayicon">
 
-              <div :class="{ 'disabled':!hasFlash && !links.turkey.html5 }"><a  :href="getHref(links.turkey)">
-                  <img src="assets/images/h-turkey.gif" alt="Silly Turkey"></a></div>
+              <div class="col-1-5">
+                <span :class="{ 'disabled':!hasFlash && !links.turkey.html5 }"><a  :href="getHref(links.turkey)">
+                    <img src="assets/images/h-turkey.gif" alt="Silly Turkey"></a></span>
+              </div>
 
-              <div :class="{ 'disabled':!hasFlash && !links.grandparents.html5 }"><a  :href="getHref(links.grandparents)">
-                  <img src="assets/images/h-gparentsday.gif" alt="Grandparents Day, Let&#39;s write a letter!"></a></div>
+              <div class="col-1-5">
+                <span :class="{ 'disabled':!hasFlash && !links.grandparents.html5 }"><a  :href="getHref(links.grandparents)">
+                    <img src="assets/images/h-gparentsday.gif" alt="Grandparents Day, Let&#39;s write a letter!"></a></span>
+              </div>
 
-              <div :class="{ 'disabled':!hasFlash && !links.hundredthDay.html5 }"><a  :href="getHref(links.hundredthDay)">
-                  <img src="assets/images/h-hundredth.gif" alt="Hundredth Day of School"></a></div>
+              <div class="col-1-5">
+                <span :class="{ 'disabled':!hasFlash && !links.hundredthDay.html5 }"><a  :href="getHref(links.hundredthDay)">
+                    <img src="assets/images/h-hundredth.gif" alt="Hundredth Day of School"></a></span>
+              </div>
 
-              <div :class="{ 'disabled':!hasFlash && !links.groundhog.html5 }"><a  :href="getHref(links.groundhog)">
-                  <img src="assets/images/h-groundhog.gif" alt="Groundhog&#39;s Day"></a></div>
+              <div class="col-1-5">
+                <span :class="{ 'disabled':!hasFlash && !links.groundhog.html5 }"><a  :href="getHref(links.groundhog)">
+                    <img src="assets/images/h-groundhog.gif" alt="Groundhog&#39;s Day"></a></span>
+              </div>
 
-              <div :class="{ 'disabled':!hasFlash && !links.clover.html5 }"><a  :href="getHref(links.clover)">
-                  <img src="assets/images/h-clover.gif" alt="Find a Four Leaf Clover"></a></div>
+              <div class="col-1-5">
+                <span :class="{ 'disabled':!hasFlash && !links.clover.html5 }"><a  :href="getHref(links.clover)">
+                    <img src="assets/images/h-clover.gif" alt="Find a Four Leaf Clover"></a></span>
+              </div>
           </div>
 
           <div class="row holidayicon">
 
-              <img src="assets/images/s.gif" style="width:40px; height:59px; float:left;" alt="">
+              <div class="col-1-10">
+                <img src="assets/images/s.gif" style="" alt="">
+              </div>
 
-              <div :class="{ 'disabled':!hasFlash && !links.gardenshop.html5 }"><a  :href="getHref(links.gardenshop)">
-                  <img src="assets/images/h-garden.gif" alt="Plant a Flower"></a></div>
+              <div class="col-1-5">
+                <span :class="{ 'disabled':!hasFlash && !links.gardenshop.html5 }"><a  :href="getHref(links.gardenshop)">
+                    <img src="assets/images/h-garden.gif" alt="Plant a Flower"></a></span>
+              </div>
 
-              <div :class="{ 'disabled':!hasFlash && !links.valentine.html5 }"><a  :href="getHref(links.valentine)">
-                  <img src="assets/images/h-valentine-15.gif" alt="Make a Valentine"></a></div>
+              <div class="col-1-5">
+                <span :class="{ 'disabled':!hasFlash && !links.valentine.html5 }"><a  :href="getHref(links.valentine)">
+                    <img src="assets/images/h-valentine-15.gif" alt="Make a Valentine"></a></span>
+              </div>
 
-              <div :class="{ 'disabled':!hasFlash && !links.spring.html5 }"><a  :href="getHref(links.spring)">
-                  <img src="assets/images/h-spring.gif" alt="Go on a Word Hunt"></a></div>
+              <div class="col-1-5">
+                <span :class="{ 'disabled':!hasFlash && !links.spring.html5 }"><a  :href="getHref(links.spring)">
+                    <img src="assets/images/h-spring.gif" alt="Go on a Word Hunt"></a></span>
+              </div>
 
-              <div :class="{ 'disabled':!hasFlash && !links.earthDay.html5 }"><a  :href="getHref(links.earthDay)">
-                  <img src="assets/images/h-earth.gif" alt="Every Day is Earth Day!"></a></div>
+              <div class="col-1-5">
+                <span :class="{ 'disabled':!hasFlash && !links.earthDay.html5 }"><a  :href="getHref(links.earthDay)">
+                    <img src="assets/images/h-earth.gif" alt="Every Day is Earth Day!"></a></span>
+              </div>
           </div>
 
       </div><!--END COL LEFT-->
