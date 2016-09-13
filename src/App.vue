@@ -414,21 +414,24 @@ export default {
 
 <style>
   /* START RESET */
-  /**{box-sizing: border-box;}*/
-  html{box-sizing: border-box;}
   html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video {
     margin:0;padding:0;border:0;font:inherit;vertical-align:baseline;text-decoration:none;list-style-type:none;
   }
-
+  *{box-sizing: border-box;}
+  html{font-size: 62.5%; }
   /* END RESET */
 
   body {
       background: #77cbff url(assets/images/BG-yellowstripe.gif) repeat;
       font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      font-size: 1em;
       /*min-width:1070px;*/
   }
 
-  .row{width:100%;float:none; clear:left;}
+  .row{}
+  .row:before,
+  .row:after{ display: table; content: " "; }
+  .row:after{clear: both;}
 
   .column{position:relative;float:left;}
 
@@ -450,10 +453,12 @@ export default {
   }
 
   .ribbon {
-      font: normal 16px "Trebuchet MS";
-      width: 470px; height:22px;
+      font: normal 1em "Trebuchet MS"; /*16px*/
+      width: 478px;
+      height: 25px;
       position: absolute;
-      top:26px; left: 240px;
+      top: 15px;
+      left: -30px;
       background: #39f;
       color: #fff;
       padding: 3px 0 0 8px;
@@ -479,7 +484,8 @@ export default {
 
   .ribbon a:hover { background:#FFF; color:#ff8e00;}
 
-  .header { background:#97DBFF url(assets/images/BG-cloudsbanner.png) repeat-x; height:36px; border:none; border-collapse:collapse; padding:10px 0 0 265px; margin-bottom:25px; color: #005bc5; position:relative; z-index:2; }
+  .header, .footer{font-size: 1.6em;}
+  .header { background:#97DBFF url(assets/images/BG-cloudsbanner.png) repeat-x; height:46px; border:none; border-collapse:collapse; padding:10px 0 0 265px; margin-bottom:25px; color: #005bc5; position:relative; z-index:2; }
 
   .nav li {float:left;}
 
@@ -488,9 +494,24 @@ export default {
   .navr li {float:right; white-space:nowrap;}
 
   .nav a, .footernav a, .navr a {color:#005bc5; z-index: <##>;}
+  .btn.mobile-nav-toggle { display: none; }
+
+  @media (max-width:740px){
+    .btn.mobile-nav-toggle { display: block; padding: 10px 5px; color: #fff; }
+    .ribbon:after{display: none;}
+    .ribbon{position: static; width: auto; height: auto; background: none; box-shadow: none; font-size: 1em; left:0; top:0; margin: 0; padding: 3px 0; border: 0; text-align: left;}
+    .nav, .navr, .nav li, .navr li{float: none; margin: none; }
+    .nav li, .navr li{border-bottom: 1px solid #86D2FF; padding: 3px 0;  }
+    .nav .bullet, .navr .bullet { display: none; }
+    /*.nav-wrap { display: none; }*/
+    .header{ height: auto; min-height: 46px; background-position: center bottom; padding-bottom: 20px; }
+  }
+
+  .table{ display: table; table-layout: fixed; width: 100%; }
+  .table-cell{ display: table-cell; vertical-align: middle; }
 
   /*col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10,.col-11,.col-12,.col-margin,.col-half-container{ width: 100%; position:relative; top:0; float:left; box-sizing: border-box; padding: 0 10px;}*/
-  [class*="col-"]{ width: 100%; position:relative; top:0; float:left; box-sizing: border-box; padding: 0 10px;}
+  [class*="col-"]{ width: 100%; position:relative; top:0; float:left; box-sizing: border-box; padding: 0 10px; margin-top: 10px;}
   .col-xs-1{width:8.33333%}
   .col-xs-2{width:16.66667%}
   .col-xs-3{width:25%}
@@ -504,9 +525,11 @@ export default {
   .col-xs-11{width:91.66667%}
   .col-xs-11b{width:98%}
   .col-xs-12{width:100%}
-  .col-half-container{width:50%}
+  .col-half-container{width:50%;}
+  .col-1-5{width:20%; padding: 0 1%;}
+  .col-1-10{width:10%; padding: 0 1%;}
 
-  @media only screen and (min-width:768px) {
+  @media only screen and (min-width:928px) {
     .col-sm-1{width:8.33333%}
     .col-sm-2{width:16.66667%}
     .col-sm-3{width:25%}
@@ -523,15 +546,16 @@ export default {
     .col-half-container{width:50%}
   }
 
-  .number {display:block; font:normal 28pt StarfallvBP_bold;float:left; height:62px; width:50px; padding-top:22px; text-align:center;}
+  .number {font:normal 2.8em StarfallvBP_bold; width:50px; padding-top:15px; text-align:center;}
 
-  h2.classicsf {font:normal 18px StarfallvBP_bold; color:#060; margin:15px 0 0 0;}
+  h2.classicsf {font:normal 1.8em StarfallvBP_bold; color:#060; margin:15px 0 0 0;}
 
-  .classic { border-radius:40px; text-align:left;box-shadow:0 2px 2px rgba(0,0,0,.50); margin:10px 0px; height:80px; width:445px; behavior: url(/css/PIE.htc); /* well-tested solution for adding border-radius to IE 6-9 */ }
+.classic { border-radius:4em; text-align:left; box-shadow:0 2px 2px rgba(0,0,0,.50); margin:1em 0px; padding: .5em; behavior: url(/css/PIE.htc); /* well-tested solution for adding border-radius to IE 6-9 */ }
 
-  .classic img { display:block; margin:6px 10px 0 0; width:65px; border-radius:5px; box-shadow:0 2px 2px rgba(0,0,0,.50); float:left;}
+  .classic img { margin:3px 10px 0 0; width:65px; border-radius:5px; box-shadow:0 2px 2px rgba(0,0,0,.50); }
+  .classic .img-well { width: 75px; }
 
-  .classic p{display:block; float:left; white-space:nowrap; height:53px; width:305px; margin-top:5px; border-radius:0 35px 35px 0; padding:0 0 0  10px; 	behavior: url(/css/PIE.htc); /* well-tested solution for adding border-radius to IE 6-9 */}
+  .classic p{white-space:nowrap; height: 71px; width: 315px; margin-top:5px; border-radius:0 35px 35px 0; padding:0 10px; 	behavior: url(/css/PIE.htc); /* well-tested solution for adding border-radius to IE 6-9 */}
 
   .ABC {background:#C3C;color:#FCF;}
 
@@ -541,7 +565,7 @@ export default {
 
   .IR {background:#F90;color:#FF9;}
 
-  .ABC p, .LTR p, .FTR p, .IR p {font:normal 28pt StarfallvBP_bold; display:block; padding-top:18px;}
+  .ABC p, .LTR p, .FTR p, .IR p {font:normal 3.6em StarfallvBP_bold; padding-top:.5em; width: 100%;}
 
   .ABC p {background:url(assets/images/BG-ABCs.png) repeat-x; color:#903;}
 
@@ -553,15 +577,15 @@ export default {
 
   .holidayicon { margin:5px 0 0; text-align:center;}
 
-  .holidayicon div {width:80px; height:59px; float:left; margin:5px; background:#39F url(assets/images/BG-holiday.png); border-radius:5px; box-shadow:0 2px 2px rgba(0,0,0,.50); padding-top:2px; 	behavior: url(/css/PIE.htc); /* well-tested solution for adding border-radius to IE 6-9 */}
+.holidayicon span { display: block; background:#39F url(assets/images/BG-holiday.png); background-size: cover; border-radius:5px; box-shadow:0 2px 2px rgba(0,0,0,.50); padding-top:2px; 	behavior: url(/css/PIE.htc); /* well-tested solution for adding border-radius to IE 6-9 */}
 
-  .holidayicon img {width:70px; height:56px;}
+  .holidayicon img {width:90%; height:auto;}
 
   .more {background:url(assets/images/BG-transparentgreen.png); border-radius:20px; height:100%; padding:5px; text-align:center; 	behavior: url(/css/PIE.htc); /* well-tested solution for adding border-radius to IE 6-9 */}
 
-  h1 {text-align:center; font:normal 32px 'DancingScript';color:#060; margin:7px 0 8px 0;}
+  h1 {text-align:center; font:normal 3.2em 'DancingScript';color:#060; margin:7px 0 8px 0;}
 
-  h2.more {margin:2px 0; padding:2px 0 0 0; font:normal 16px StarfallvBP_bold; color:#060;
+  h2.more {margin:2px 0; padding:2px 0 0 0; font:normal 1.6em StarfallvBP_bold; color:#060;
 
       background:url(assets/images/BG-transparentgreen.png); border-radius:5px; 	behavior: url(/css/PIE.htc); /* well-tested solution for adding border-radius to IE 6-9 */}
 
@@ -587,7 +611,7 @@ export default {
       white-space: nowrap;
   }
 
-  .about {font:16px Georgia, "Times New Roman", Times, serif; float:none; clear:both; margin:15px 100px;}
+  .about {font:1em Georgia, "Times New Roman", Times, serif; float:none; clear:both; margin:15px 100px;}
 
   .about a {color:#005bc5; background:#b8eaff; border-radius:2px; padding: 0 3px; 	behavior: url(/css/PIE.htc); /* well-tested solution for adding border-radius to IE 6-9 */}
 
@@ -599,7 +623,7 @@ export default {
     display: inline-block;
     padding: 6px 12px;
     margin-bottom: 0;
-    font-size: 14px;
+    font-size: 1.4em;
     font-weight: normal;
     line-height: 1.42857143;
     text-align: center;
