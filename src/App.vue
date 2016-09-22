@@ -2,14 +2,14 @@
 
 
   <div class="logo">
-
       <img src="assets/images/starfall-2014.png" width="220" height="60" alt="Starfall">
-
   </div>
 
-  <div class="header">
-    <button class="mobile-nav-toggle btn btn-info" @click.prevent="show.mobileNav = !show.mobileNav">Menu</button>
-    <div class="nav-wrap">
+  <div class="header row" :class="{'expand': show.mobileNav}">
+    <div class="row">
+      <button class="mobile-nav-toggle btn btn-info" @click.prevent="show.mobileNav = !show.mobileNav">Menu</button>
+    </div>
+    <div id="nav-wrap" class="nav-wrap" :class="{'show':show.mobileNav}">
 
         <ul class="nav">
 
@@ -43,7 +43,7 @@
 
             <h1 class="ribbon">
 
-                Kindergarten Mathematics curriculum is here! <a href="http://more.starfall.com/info/curriculum/k-math.php">Learn More</a>
+                Kindergarten Mathematics curriculum is here! <a href="http://more.starfall.com/info/curriculum/k-math.php" class="btn btn-sm">Learn More</a>
 
             </h1>
 
@@ -380,13 +380,15 @@ export default {
   data () {
     return {
       links,
-      flash: true,
-      useHtmlFive: false
+      flash: false,
+      useHtmlFive: false,
+      show: {
+        mobileNav: false
+      }
     }
   },
   ready () {
     Modernizr.on('flash', function (result) {
-      console.log('result', result)
       this.flash = result
       return result
     }.bind(this))
@@ -397,9 +399,14 @@ export default {
     hasFlash: {
       cache: false,
       get () {
-        console.log('resolving', this.flash)
         if (this.flash === undefined) this.flash = Modernizr.flash
         return this.useHtmlFive ? false : this.flash
+      }
+    },
+    screenSize: {
+      cache: false,
+      get () {
+        return this.window.innerWidth || this.document.documentElement.clientWidth || this.document.body.clientWidth
       }
     }
   },
@@ -487,7 +494,7 @@ export default {
   .header, .footer{font-size: 1.6em;}
   .header { background:#97DBFF url(assets/images/BG-cloudsbanner.png) repeat-x; height:46px; border:none; border-collapse:collapse; padding:10px 0 0 265px; margin-bottom:25px; color: #005bc5; position:relative; z-index:2; }
 
-  .nav li {float:left;}
+  .nav li, .footer .nav li {float:left; border: none; }
 
   .navr {margin-right:15px;}
 
@@ -496,14 +503,18 @@ export default {
   .nav a, .footernav a, .navr a {color:#005bc5; z-index: <##>;}
   .btn.mobile-nav-toggle { display: none; }
 
-  @media (max-width:740px){
-    .btn.mobile-nav-toggle { display: block; padding: 10px 5px; color: #fff; }
+  @media (max-width:928px){
+    .btn.mobile-nav-toggle { display: block; float: right; padding: 5px 10px; margin-right: 10px; color: #fff; }
+    .header { padding: 20px 0 0 20px; }
     .ribbon:after{display: none;}
-    .ribbon{position: static; width: auto; height: auto; background: none; box-shadow: none; font-size: 1em; left:0; top:0; margin: 0; padding: 3px 0; border: 0; text-align: left;}
+    .ribbon{position: static; width: auto; height: auto; background: none; box-shadow: none; font-size: 1em; left:0; top:0; margin: 0; padding: 5px 0; border: 0; text-align: left;}
     .nav, .navr, .nav li, .navr li{float: none; margin: none; }
-    .nav li, .navr li{border-bottom: 1px solid #86D2FF; padding: 3px 0;  }
+    .nav li, .navr li{border-bottom: 1px solid #86D2FF; padding: 0;  }
+    .nav li a, .navr li a{ display: block; padding: 5px; }
     .nav .bullet, .navr .bullet { display: none; }
-    /*.nav-wrap { display: none; }*/
+    .nav-wrap, .header { transition: all .3s ease; }
+    .nav-wrap { display: none; float: left; width: 100%; }
+    .nav-wrap.show { display: block; }
     .header{ height: auto; min-height: 46px; background-position: center bottom; padding-bottom: 20px; }
   }
 
@@ -675,6 +686,7 @@ export default {
   fieldset[disabled] a.btn {
     pointer-events: none;
   }
+  .btn-sm{ font-size: 1em; }
   .btn-default {
     color: #333;
     background-color: #fff;
